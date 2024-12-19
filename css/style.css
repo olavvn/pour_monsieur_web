@@ -453,7 +453,7 @@ strong {
 
 .navbar-nav .nav-link.active, 
 .navbar-nav .nav-link:hover {
-  color: var(--secondary-color);
+  color: #fcdd88;
 }
 
 .navbar-toggler {
@@ -573,6 +573,58 @@ strong {
 .about-image {
   border-radius: var(--border-radius-medium);
   display: block;
+}
+
+.category-thumb:hover .category-hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.about-hover {
+  background-color: var(--primary-color);
+  background-color: rgba(248, 203, 46, 0.75);
+  border-radius: 8px;
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  height: 50%;
+  margin: 0px;
+  padding: 35px;
+  transition: all 0.5s ease;
+  transform: translateY(100%);
+  text-align: center;
+  object-position: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+    /* Flexbox 설정 */
+  display: flex;                /* Flexbox 활성화 */
+  justify-content: center;      /* 가로 정렬: 중앙 */
+  align-items: center;          /* 세로 정렬: 중앙 */
+}
+
+.category-hover h1 a {
+  object-position: center;
+}
+
+.category-hover p strong {
+  color: var(--white-color);
+  display: inline-block;
+  min-width: 180px;
+  margin-right: 20px;
+}
+
+.category-hover p a {
+  color: var(--secondary-color);
+}
+
+.category-hover p a:hover {
+  color: var(--white-color);
+}
+
+.category-hover hr {
+  margin: 1.5rem 0;
 }
 
 .services-info {
@@ -1010,6 +1062,78 @@ strong {
 .pricing-thumb .link-fx-1:hover {
   color: var(--link-hover-color);
 }
+
+/*---------------------------------------
+  BLOG              
+-----------------------------------------*/
+
+/* Add a gray background color with some padding */
+.blog_body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.blog_header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.blog_leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.blog_rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.blog_fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.blog_card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.blog_row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.blog_footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .blog_leftcolumn, .blog_rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
 
 
 /*---------------------------------------
