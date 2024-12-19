@@ -527,7 +527,8 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: url('https://i.pinimg.com/736x/e3/ee/80/e3ee8022d6f8b1f6de06fd19146f97aa.jpg');
+  background-image: url('https://i.pinimg.com/736x/b8/d6/e9/b8d6e9ab8d48c6336ae16de147871a89.jpg');
+  background-position: center; /* 이미지 중앙에 위치 */
   position: relative;
   overflow: hidden;
   padding-top: 100px;
@@ -565,6 +566,8 @@ strong {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  width: 100%;
+  height: 100%
 }
 
 .about-image {
@@ -572,8 +575,14 @@ strong {
   display: block;
 }
 
+.services-info {
+  position: relative;
+  top: 75px; /* 원하는 만큼 아래로 이동 */
+}
+
 .about-text-wrap {
   position: relative;
+  top: 75px;
 }
 
 .about-text-icon {
@@ -599,6 +608,14 @@ strong {
   margin: 20px;
   padding: 35px;
 }
+
+.about-section .row {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
 
 
 /*---------------------------------------
@@ -638,61 +655,222 @@ strong {
 
 
 /*---------------------------------------
-  ARTISTS              
+  CATEGORY              
 -----------------------------------------*/
-.artists-thumb {
+.category-column {
+  flex: 25%;                /* 부모 컨테이너의 절반 너비 */
+  max-width: 25%;           /* 최대 너비 49.9% */
+  margin: 0 ;             /* 칼럼 간 간격 */
+  padding: 0; 
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.category-thumb {
+  display: flex;               /* Flexbox 활성화 */
+  flex-direction: column;      /* 아이템을 세로로 정렬 */
+  justify-content: flex-start; /* 세로 정렬 시작점 고정 */
+  align-items: center;         /* 수평 중앙 정렬 */
+  flex: 1 1 calc(50% - 20px);  /* 반응형 크기: 50% 너비에서 여백 차감 */
+  margin-bottom: 10px;                /* 요소 간 간격 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; 
   position: relative;
-  overflow: hidden;
-  margin-bottom: 30px;
 }
-
-.artists-image {
-  border-radius: var(--border-radius-medium);
-  display: block;
+.category-image-wrap{
   width: 100%;
+  aspect-ratio: 5/4;
+  display: block;
+  overflow: hidden;
+}
+.category-image {
+  width: 100%;                  /* 이미지의 가로를 컨테이너에 맞춤 */
+  height: 100%;                 /* 이미지의 세로를 컨테이너에 맞춤 */
+  object-fit: cover;            /* 이미지 비율 유지하며 컨테이너에 맞춤 */
+  object-position: center;      /* 이미지의 중앙을 기준으로 표시 */
 }
 
-.artists-thumb:hover .artists-hover {
+.category-thumb:hover .category-hover {
   transform: translateY(0);
   opacity: 1;
 }
 
-.artists-hover {
+.category-hover {
   background-color: var(--primary-color);
   background-color: rgba(248, 203, 46, 0.75);
-  border-radius: var(--border-radius-medium);
+  border-radius: 8px;
   backdrop-filter: blur(5px) saturate(180%);
   -webkit-backdrop-filter: blur(5px) saturate(180%);
-  margin: 20px;
+  height: 100%;
+  margin: 0px;
   padding: 35px;
   transition: all 0.5s ease;
   transform: translateY(100%);
+  text-align: center;
+  object-position: center;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
   opacity: 0;
+    /* Flexbox 설정 */
+  display: flex;                /* Flexbox 활성화 */
+  justify-content: center;      /* 가로 정렬: 중앙 */
+  align-items: center;          /* 세로 정렬: 중앙 */
 }
 
-.artists-hover p strong {
+.category-hover h1 a {
+  object-position: center;
+}
+
+.category-hover p strong {
   color: var(--white-color);
   display: inline-block;
   min-width: 180px;
   margin-right: 20px;
 }
 
-.artists-hover p a {
+.category-hover p a {
   color: var(--secondary-color);
 }
 
-.artists-hover p a:hover {
+.category-hover p a:hover {
   color: var(--white-color);
 }
 
-.artists-hover hr {
+.category-hover hr {
   margin: 1.5rem 0;
 }
 
+/*---------------------------------------
+  BRANDS            
+-----------------------------------------*/
+.brand-nav{
+  display:flex;
+  justify-content: space-around;
+  background-color: #333;
+  display:flex;
+  width: 100%;
+  height: calc(100vh - 51px);
+  }
+
+/* Q6. Style the navigation bar links (add below)
+ padding: 14px 20px; four links equal width, distributed evenly,
+ align the text center, text decoration should be none,
+ font-size is 1.2% of the view port width, white color
+*/
+.brands-nav a{
+  display:flex;
+  flex-direction:column;
+  color:white;
+  padding:14px 20px;
+  text-decoration:none;
+  text-align:center;
+  justify-content:center;
+  font-size:1.2vw;
+  width: 100%
+  }
+  .brands-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5%;
+        /* Flexbox 설정 */
+    justify-content: center;      /* 가로 정렬: 중앙 */
+    align-items: center;  
+    flex: 1 1 calc(50% - 20px);  /* 반응형 크기: 50% 너비에서 여백 차감 */
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .brands-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 1%;
+  }
+  .brands-thumb {
+    display: flex;               /* Flexbox 활성화 */
+    flex-direction: column;      /* 아이템을 세로로 정렬 */
+    justify-content: flex-start; /* 세로 정렬 시작점 고정 */
+    align-items: center;         /* 수평 중앙 정렬 */
+    flex: 1 1 calc(50% - 20px);  /* 반응형 크기: 50% 너비에서 여백 차감 */
+    margin-bottom: 10px;                /* 요소 간 간격 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; 
+    position: relative;
+  }
+  .brands-image-wrap{
+    width: 100%;
+    aspect-ratio: 4/5;
+    display: block;
+    overflow: hidden;
+  }
+  .brands-image {
+    width: 100%;                  /* 이미지의 가로를 컨테이너에 맞춤 */
+    height: 100%;                 /* 이미지의 세로를 컨테이너에 맞춤 */
+    object-fit: cover;            /* 이미지 비율 유지하며 컨테이너에 맞춤 */
+    object-position: center;      /* 이미지의 중앙을 기준으로 표시 */
+  }
+  
+  .brands-thumb:hover .brands-hover {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .brands-hover {
+    background-color: var(--primary-color);
+    background-color: rgba(248, 203, 46, 0.75);
+    border-radius: 8px;
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+    height: 100%;
+    margin: 0px;
+    padding: 35px;
+    transition: all 0.5s ease;
+    transform: translateY(100%);
+    text-align: center;
+    object-position: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+      /* Flexbox 설정 */
+    display: flex;                /* Flexbox 활성화 */
+    justify-content: center;      /* 가로 정렬: 중앙 */
+    align-items: center;          /* 세로 정렬: 중앙 */
+  }
+  
+  .brands-hover h1 a {
+    object-position: center;
+  }
+  
+  .brands-hover p strong {
+    color: var(--white-color);
+    display: inline-block;
+    min-width: 180px;
+    margin-right: 20px;
+  }
+  
+  .brands-hover p a {
+    color: var(--secondary-color);
+  }
+  
+  .brands-hover p a:hover {
+    color: var(--white-color);
+  }
+  
+  .brands-hover hr {
+    margin: 1.5rem 0;
+  }
+
+  .brands-column img {
+    width: 100%;                  /* 이미지의 가로를 컨테이너에 맞춤 */
+    height: 100%;                 /* 이미지의 세로를 컨테이너에 맞춤 */
+    object-fit: cover;            /* 이미지 비율 유지하며 컨테이너에 맞춤 */
+    object-position: center;      /* 이미지의 중앙을 기준으로 표시 */
+  }
 
 /*---------------------------------------
   SCHEDULE              
@@ -1044,16 +1222,54 @@ strong {
   .ticket-form {
     padding: 30px;
   }
+  .category-column{
+    flex:25%;
+    max-width:1;
+  }
+  .category-thumb{
+    flex: 50%;
+    max-width:1;
+  }
+  .brands-column{
+    flex:50%;
+    max-width:100%;
+  }
+  .brands-thumb{
+    flex: 50%;
+    max-width:1;
+  }
 }
 
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 767px) {
+  .category-container{
+    flex-direction: column; 
+    justify-content: center;
+  }
   .custom-btn {
     font-size: 14px;
     padding: 10px 20px;
   }
+  .category-column{
+    flex:50%;
+    max-width:100%;
+  }
+  .category-thumb{
+    flex:50%;
+  }
+  .brands-column{
+    flex:50%;
+    max-width:100%;
+  }
+  .brands-thumb{
+    flex:50%;
+  }
 }
 
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 500px) {
   h1 {
     font-size: 52px;
   }
@@ -1073,5 +1289,16 @@ strong {
   h5 {
     font-size: 20px;
   }
+
+  .category-column{
+    flex:100%;
+    max-width:100%;
+  }
+
+  .brands-column{
+    flex:100%;
+    max-width:100%;
+  }
+
 }
 

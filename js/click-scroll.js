@@ -16,6 +16,7 @@ $.each(sectionArray, function(index, value){
              $('.navbar-nav .nav-item .nav-link:link').addClass('inactive');  
              $('.navbar-nav .nav-item .nav-link').eq(index).addClass('active');
              $('.navbar-nav .nav-item .nav-link').eq(index).removeClass('inactive');
+
          }
          
      });
@@ -34,4 +35,7 @@ $(document).ready(function(){
     $('.navbar-nav .nav-item .nav-link:link').addClass('inactive');    
     $('.navbar-nav .nav-item .nav-link').eq(0).addClass('active');
     $('.navbar-nav .nav-item .nav-link:link').eq(0).removeClass('inactive');
+    $('.brand-nav').addClass('inactive');    
+    $('.brand-nav').eq(0).addClass('active');
+    $('.brand-nav').eq(0).removeClass('inactive');
 });
